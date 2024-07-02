@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export default function Header() {
   return (
-    <header className="h-[66px] w-full pb-[18px] pl-[54px] pt-[19px]">
+    <header className="absolute top-0 left-0 h-[66px] w-full pb-[18px] pl-[54px] pt-[19px]">
       <div className="flex items-center">
         <Image
           src="/images/header/header-symbol.png"
