@@ -23,7 +23,7 @@ export default function Main() {
             <ApplyButton className="mt-[56px]" />
           </div>
         </div>
-        <div className="flex-1 flex mt-[200px] ml-[50px]">
+        <div className="flex-1 flex mt-[160px] ml-[50px]">
           <Logo />
         </div>
       </div>
