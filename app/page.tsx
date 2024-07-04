@@ -1,10 +1,13 @@
-import { Button } from '@/components/ui/button';
-import Image from 'next/image';
+import Footer from './_component/Footer';
+import Header from './_component/Header';
+import Main from './_component/main/Main';
 
 export default function Home() {
   return (
-    <Button variant="destructive" size="lg" className="text-4xl">
-      Jenkins Test!
-    </Button>
+    <div className="flex flex-col">
+      <Header />
+      <Main />
+      <Footer />
+    </div>
   );
 }
