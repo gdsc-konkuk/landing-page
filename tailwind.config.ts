@@ -67,10 +67,145 @@ const config = {
           from: { height: 'var(--radix-accordion-content-height)' },
           to: { height: '0' },
         },
+        drop: {
+          '0%': {
+            transform: 'rotate(30deg) translate(0px, 0px)',
+          },
+          '40%': {
+            transform: 'rotate(-38deg) translate(16px, -28px)',
+          },
+          '80%': {
+            transform: 'rotate(-27deg) translate(16px, -28px)',
+          },
+          '100%': {
+            transform: 'rotate(-30deg) translate(16px, -28px)',
+          },
+        },
+        'scale-red': {
+          '0%': {
+            transform: 'scale(1) rotate(-30deg)',
+          },
+          '10%': {
+            transform: 'scale(1.33) rotate(-30deg) translateY(6px)',
+          },
+          '25%': {
+            transform: 'scale(1.27) rotate(-30deg) translateY(6px)',
+          },
+          '45%': {
+            transform: 'scale(1.31) rotate(-30deg) translateY(6px)',
+          },
+          '70%': {
+            transform: 'scale(1.29) rotate(-30deg) translateY(6px)',
+          },
+          '100%': {
+            transform: 'scale(1.3) rotate(-30deg) translateY(6px)',
+          },
+        },
+        'scale-blue': {
+          '0%': {
+            transform: 'scale(1) rotate(30deg)',
+          },
+          '10%': {
+            transform: 'scale(1.33) rotate(30deg)',
+          },
+          '25%': {
+            transform: 'scale(1.27) rotate(30deg)',
+          },
+          '45%': {
+            transform: 'scale(1.31) rotate(30deg)',
+          },
+          '70%': {
+            transform: 'scale(1.29) rotate(30deg)',
+          },
+          '100%': {
+            transform: 'scale(1.3) rotate(30deg)',
+          },
+        },
+        'scale-green': {
+          '0%': {
+            transform: 'scale(1) rotate(30deg)',
+          },
+          '10%': {
+            transform: 'scale(1.33) rotate(30deg)',
+          },
+          '25%': {
+            transform: 'scale(1.27) rotate(30deg)',
+          },
+          '45%': {
+            transform: 'scale(1.31) rotate(30deg)',
+          },
+          '70%': {
+            transform: 'scale(1.29) rotate(30deg)',
+          },
+          '100%': {
+            transform: 'scale(1.3) rotate(30deg)',
+          },
+        },
+        'scale-yellow': {
+          '0%': {
+            transform: 'scale(1) rotate(-30deg) translate(16px, -28px)',
+          },
+          '10%': {
+            transform: 'scale(1.33) rotate(-30deg) translate(16px, -28px)',
+          },
+          '25%': {
+            transform: 'scale(1.27) rotate(-30deg) translate(16px, -28px)',
+          },
+          '45%': {
+            transform: 'scale(1.31) rotate(-30deg) translate(16px, -28px)',
+          },
+          '70%': {
+            transform: 'scale(1.29) rotate(-30deg) translate(16px, -28px)',
+          },
+          '100%': {
+            transform: 'scale(1.3) rotate(-30deg) translate(16px, -28px)',
+          },
+        },
+        'bounce-left': {
+          '0%': {
+            transform: 'translateX(0)',
+          },
+          '10%': {
+            transform: 'translateX(50px)',
+          },
+          '25%': {
+            transform: 'translateX(41px)',
+          },
+          '45%': {
+            transform: 'translateX(47px)',
+          },
+          '70%': {
+            transform: 'translateX(44px)',
+          },
+          '100%': {
+            transform: 'translateX(45px)',
+          },
+        },
+        'bounce-right': {
+          '0%': {
+            transform: 'translate(0px, 0px)',
+          },
+          '10%': {
+            transform: 'translate(330px, 10px)',
+          },
+          '25%': {
+            transform: 'translate(270px, 10px)',
+          },
+          '45%': {
+            transform: 'translate(310px, 10px)',
+          },
+          '70%': {
+            transform: 'translate(290px, 10px)',
+          },
+          '100%': {
+            transform: 'translate(300px, 10px)',
+          },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
+        drop: 'drop 0.4s linear forwards 1000ms, scale-yellow 0.8s linear forwards 2100ms',
       },
       fontFamily: {
         pretendard: 'var(--font-pretendard)',
@@ -83,4 +218,3 @@ const config = {
 } satisfies Config;
 
 export default config;
-
