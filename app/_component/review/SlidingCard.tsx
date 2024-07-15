@@ -8,19 +8,19 @@ import {
 } from "@/components/ui/carousel";
 import { Card, CardContent } from "@/components/ui/card";
 
-import reviewCardBuildwithAI from '../../../public/images/review/reviewCardBuildwithAI.svg';
+// import reviewCardBuildwithAI from '../../../public/images/review/reviewCardBuildwithAI.svg';
 import reviewCardDanggn from '../../../public/images/review/reviewCardDanggn.svg';
 import reviewCardFlutter from '../../../public/images/review/reviewCardFlutter.svg';
-import reviewCardGDSCGermany from '../../../public/images/review/reviewCardGDSCGermany.svg';
-import reviewCardGraduation from '../../../public/images/review/reviewCardGraduation.svg';
+import reviewCardGDSCGermany from '../../../public/images/review/reviewCardGDSCGermany.jpeg';
+import reviewCardGraduation from '../../../public/images/review/reviewCardGraduation.jpeg';
 import reviewCardHanyang from '../../../public/images/review/reviewCardHanyang.svg';
 import reviewCardKprintf from '../../../public/images/review/reviewCardKprintf.svg';
-import reviewCardMTandTrip from '../../../public/images/review/reviewCardMTandTrip.svg';
+import reviewCardMTandTrip from '../../../public/images/review/reviewCardMTandTrip.jpeg';
 import reviewCardRegularSeminar from '../../../public/images/review/reviewCardRegularSeminar.svg';
-import reviewCardWRTN from '../../../public/images/review/reviewCardWRTN.svg';
+import reviewCardWRTN from '../../../public/images/review/reviewCardWRTN.jpeg';
 
 const cards = [
-  reviewCardBuildwithAI,
+  // reviewCardBuildwithAI,
   reviewCardDanggn,
   reviewCardFlutter,
   reviewCardGDSCGermany,
@@ -38,7 +38,7 @@ export default function SlidingCard() {
       opts={{
         align: "start",
       }}
-      className="w-full max-w-sm"
+      className="w-full"
     >
       <CarouselContent>
         {cards.map((card, index) => (
