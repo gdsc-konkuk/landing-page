@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from "react";
 import {
   Carousel,
@@ -46,7 +47,7 @@ export default function SlidingCard() {
             <div className="p-1">
               <Card>
                 <CardContent className="flex aspect-square items-center justify-center space-x-[16px]">
-                  <img src={card} alt={`Review Card ${index + 1}`} className="w-full h-full object-cover rounded-lg" />
+                  <Image src={card} alt={`Review Card ${index + 1}`} className="w-full h-full object-cover rounded-lg" />
                 </CardContent>
               </Card>
             </div>
