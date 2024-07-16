@@ -211,6 +211,7 @@ const config = {
         pretendard: 'var(--font-pretendard)',
         suite: 'var(--font-suite)',
         google: 'var(--font-google-sans)',
+        gangwon: 'var(--font-gangwon)',
       },
     },
   },
