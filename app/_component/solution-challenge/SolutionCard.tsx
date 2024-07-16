@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 interface SolutionCardProps {
   title: string;
-  description: string;
+  description: string[];
   imageSrc: string;
   link: string;
   className?: string;
@@ -20,7 +20,7 @@ export default function SolutionCard({
   return (
     <div
       className={cn(
-        'w-[1194px] h-[581px] bg-white rounded-[22px] flex gap-10 justify-center items-center shadow-xl absolute -translate-x-1/2',
+        'w-[1194px] h-[581px] bg-white rounded-[22px] flex gap-[70px] justify-center items-center shadow-xl absolute -translate-x-1/2',
         className,
       )}
     >
@@ -31,15 +31,14 @@ export default function SolutionCard({
             <p key={i}>{d}</p>
           ))}
         </div>
-        <Link href={link}>
-          <p className="mt-[66px] font-suite text-[20px]">{'-> '}자세히보기</p>
-        </Link>
+        <p className="mt-[66px] font-suite text-[20px]">
+          <Link href={link}>{'-> '}자세히보기</Link>
+        </p>
       </div>
       <div className="relative h-[442px] w-[715px]">
         <Image
           fill
           src={imageSrc}
-          objectFit="cover"
           alt="pathpal"
           className="rounded-[24px] border-[2px] border-[#E4E4E4] object-cover"
         />
