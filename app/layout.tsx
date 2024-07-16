@@ -16,6 +16,13 @@ const suite = localFont({
   variable: '--font-suite',
 });
 
+const gangwon = localFont({
+  src: '../public/fonts/GangwonEduPower.woff2',
+  display: 'swap',
+  weight: '400',
+  variable: '--font-gangwon',
+});
+
 const googleSans = localFont({
   src: [
     {
@@ -52,7 +59,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${pretendard.variable} ${suite.variable} ${googleSans.variable}`}
+      className={`${pretendard.variable} ${suite.variable} ${googleSans.variable} ${gangwon.variable}`}
     >
       <body className={pretendard.className}>{children}</body>
     </html>
