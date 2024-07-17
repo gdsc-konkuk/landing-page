@@ -13,7 +13,7 @@ const solutionData = [
       '이동권과 사회적 편의를 제공합니다.',
     ],
     imageSrc: '/images/solution/pathpal.png',
-    link: 'https://naver.com',
+    link: 'https://github.com/GDSC-PathPal',
     className: 'z-50',
   },
   {
@@ -24,7 +24,7 @@ const solutionData = [
       '개발된 시각 경보 시스템입니다.',
     ],
     imageSrc: '/images/solution/glowalarm.png',
-    link: 'https://naver.com',
+    link: 'https://github.com/sound-light',
     className: 'z-40 translate-y-[57px]',
   },
 ];
