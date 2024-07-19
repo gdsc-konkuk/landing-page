@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import React from "react";
+
 import {
   Carousel,
   CarouselContent,
@@ -46,8 +47,8 @@ export default function SlidingCard() {
           <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
             <div className="p-1">
               <Card>
-                <CardContent className="flex aspect-square items-center justify-center space-x-[16px] ">
-                  <Image src={card} alt={`Review Card ${index + 1}`} className="w-full h-full object-cover rounded-[22px]" />
+                <CardContent className="flex items-center justify-center space-x-[16px] ">
+                  <Image src={card} alt={`Review Card ${index + 1}`} className=" rounded-[22px]" />
                 </CardContent>
               </Card>
             </div>

@@ -1,11 +1,9 @@
 import SlidingCard from './SlidingCard.tsx';
 
-
-
 export default function Review() {
   return (
     <div className="h-screen w-screen flex justify-center items-center">
-      <div className="w-[80%] text-center"> {/* text-center 클래스를 추가하여 중앙 정렬 */}
+      <div className="w-[80%}] text-center"> {/* text-center 클래스를 추가하여 중앙 정렬 */}
         <div>
           <div>
             <h1 className="text-[#EA4335] text-[64px] font-bold leading-[120px]">
