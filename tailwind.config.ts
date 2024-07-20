@@ -201,16 +201,39 @@ const config = {
             transform: 'translate(300px, 10px)',
           },
         },
+        'blow-up': {
+          '0%': {
+            transform: 'translate(-50%, 0)',
+            opacity: '1',
+          },
+          '100%': {
+            transform: 'translate(-50%, -100%)',
+            opacity: '0',
+          },
+        },
+        'blow-down': {
+          '0%': {
+            transform: 'translate(-50%, -100%)',
+            opacity: '0',
+          },
+          '100%': {
+            transform: 'translate(-50%, 0)',
+            opacity: '1',
+          },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
         drop: 'drop 0.4s linear forwards 1000ms, scale-yellow 0.8s linear forwards 2100ms',
+        'blow-up': 'blow-up 0.3s linear forwards',
+        'blow-down': 'blow-down 0.3s linear forwards',
       },
       fontFamily: {
         pretendard: 'var(--font-pretendard)',
         suite: 'var(--font-suite)',
         google: 'var(--font-google-sans)',
+        gangwon: 'var(--font-gangwon)',
       },
     },
   },
