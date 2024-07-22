@@ -10,16 +10,16 @@ import {
 } from "@/components/ui/carousel";
 import { Card, CardContent } from "@/components/ui/card";
 
-import reviewCardBuildwithAI from '../../../public/images/review/reviewCardBuildwithAI.jpeg';
-import reviewCardDanggn from "../../../public/images/review/reviewCardDanggn.jpeg";
-import reviewCardFlutter from "../../../public/images/review/reviewCardFlutter.jpeg";
-import reviewCardGDSCGermany from "../../../public/images/review/reviewCardGDSCGermany.jpeg";
-import reviewCardGraduation from "../../../public/images/review/reviewCardGraduation.jpeg";
-import reviewCardHanyang from "../../../public/images/review/reviewCardHanyang.jpeg";
-import reviewCardKprintf from "../../../public/images/review/reviewCardKprintf.jpeg";
-import reviewCardMTandTrip from "../../../public/images/review/reviewCardMTandTrip.jpeg";
-import reviewCardRegularSeminar from "../../../public/images/review/reviewCardRegularSeminar.jpeg";
-import reviewCardWRTN from "../../../public/images/review/reviewCardWRTN.jpeg";
+import reviewCardBuildwithAI from '../../../public/images/review/reviewCardBuildwithAI.png';
+import reviewCardDanggn from "../../../public/images/review/reviewCardDanggn.png";
+import reviewCardFlutter from "../../../public/images/review/reviewCardFlutter.png";
+import reviewCardGDSCGermany from "../../../public/images/review/reviewCardGDSCGermany.png";
+import reviewCardGraduation from "../../../public/images/review/reviewCardGraduation.png";
+import reviewCardHanyang from "../../../public/images/review/reviewCardHanyang.png";
+import reviewCardKprintf from "../../../public/images/review/reviewCardKprintf.png";
+import reviewCardMTandTrip from "../../../public/images/review/reviewCardMTandTrip.png";
+import reviewCardRegularSeminar from "../../../public/images/review/reviewCardRegularSeminar.png";
+import reviewCardWRTN from "../../../public/images/review/reviewCardWRTN.png";
 
 const cards = [
   reviewCardBuildwithAI,
