@@ -5,8 +5,6 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
 } from "@/components/ui/carousel";
 import { Card, CardContent } from "@/components/ui/card";
 
@@ -81,32 +79,34 @@ export default function SlidingCard() {
     <Carousel
       opts={{
         align: "start",
+        dragFree: true, //More natural drag-MinboyKim tip
       }}
-      className=""
+      className="select-none" //to prevent select text-MinboyKim tip
     >
       <CarouselContent>
         {cards.map((card, index) => (
-          <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+          <CarouselItem key={index}
+          // className="md:basis-1/2 lg:basis-1/3">
+          //flex-basis: auto"
+          className="basis-auto">
             <div className="p-1">
               <Card className="group relative overflow-hidden">
               <CardContent className="p-0">
-                  <Image 
-                    src={card.image} 
+                  <Image
+                    src={card.image}
                     alt={`Review Card ${index + 1}`} 
                     className="w-full h-auto rounded-[22px] transition-all duration-300 group-hover:brightness-50"
                   />
                   <div className="absolute inset-0 flex flex-col items-start opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <h3 className="text-white text-[28px] font-semibold mt-[28px] ml-[34px]">{card.title}</h3>
                     <p className="text-white text-xl text-center p-[34px]">{card.description}</p>
-                  </div> 
+                  </div>
                 </CardContent>
               </Card>
             </div>
           </CarouselItem>
         ))}
       </CarouselContent>
-      <CarouselPrevious />
-      <CarouselNext />
     </Carousel>
   );
 }
