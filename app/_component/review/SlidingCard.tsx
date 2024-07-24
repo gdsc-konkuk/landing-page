@@ -98,8 +98,8 @@ export default function SlidingCard() {
                     className="w-[552px] h-[371px] rounded-[22px] transition-all duration-300 group-hover:brightness-50"
                   />
                   <div className="absolute inset-0 flex flex-col items-start opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <h3 className="text-white text-[28px] font-semibold mt-[28px] ml-[34px]">{card.title}</h3>
-                    <p className="text-white text-xl text-center p-[34px]">{card.description}</p>
+                    <h3 className="text-white text-[28px] font-semibold font-suite leading-10 tracking-wide mt-[28px] ml-[34px]">{card.title}</h3>
+                    <p className="text-white text-xl text-center font-suite leading-10 p-[34px]">{card.description}</p>
                   </div>
                 </CardContent>
               </Card>
