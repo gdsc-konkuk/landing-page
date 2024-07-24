@@ -1,4 +1,4 @@
-import SlidingCard from './SlidingCard.tsx';
+import SlidingCard from './SlidingCard';
 
 export default function Review() {
   return (
