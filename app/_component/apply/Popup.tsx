@@ -1,8 +1,9 @@
 'use client'
 import React, { useEffect, useRef, useState } from 'react';
-import ApplyButton from '@/components/ui/ApplyButton';
 import Image from 'next/image';
 import applyCards from '../../../public/images/apply/applyCards.png';
+import blueCharacter from '../../../public/images/apply/blueCharacter.png';
+import ApplyButton from '@/components/ui/ApplyButton';
 import 'animate.css'; //bounce animations library
 
 export default function Popup() {
