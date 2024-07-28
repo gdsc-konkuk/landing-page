@@ -37,38 +37,34 @@ const cards: CardData[] = [
 ];
 
 const Keyword: React.FC = () => {
-    const [activeIndex, setActiveIndex] = useState(0);
-    const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-  
-    const colors = ['bg-[#ea4335]', 'bg-[#33b540]', 'bg-[#fbbc04]'];
-  
-    return (
-      <div className="h-screen w-screen flex justify-center">
-        <div className="flex items-center">
-          <div className="space-y-[40px] relative">
-            {cards.map((_, index) => (
-              <React.Fragment key={index}> 
-                <Dot
-                  key={index}
-                  color={hoveredIndex === index ? colors[index] : 'bg-gray-400'}
-                  onHover={() => {
-                    setActiveIndex(index);
-                    setHoveredIndex(index);
-                  }}
-                  onLeave={() => setHoveredIndex(null)}
-                />
-                {index < cards.length - 1 && (
-                  <div className="h-[173px] w-[1px] bg-[#6C6C6C] mx-auto rounded-full"></div> 
-                )}
-              </React.Fragment>
-            ))}
-          </div>
-          <div className='ml-[41px]'>
-            <Card card={cards[activeIndex]} />
-          </div>
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const colors = ['bg-[#ea4335]', 'bg-[#33b540]', 'bg-[#fbbc04]'];
+
+  return (
+    <div className="h-screen w-screen flex justify-center">
+      <div className="flex items-center">
+        <div className="space-y-[40px] relative">
+          {cards.map((_, index) => (
+            <React.Fragment key={index}> 
+              <Dot
+                key={index}
+                color={activeIndex === index ? colors[index] : 'bg-gray-400'}
+                onHover={() => setActiveIndex(index)}
+                onLeave={() => {}}
+              />
+              {index < cards.length - 1 && (
+                <div className="h-[173px] w-[1px] bg-[#6C6C6C] mx-auto rounded-full"></div> 
+              )}
+            </React.Fragment>
+          ))}
+        </div>
+        <div className='ml-[41px]'>
+          <Card card={cards[activeIndex]} />
         </div>
       </div>
-    );
-  }
+    </div>
+  );
+}
 
 export default Keyword;
