@@ -5,6 +5,7 @@ import Image from 'next/image';
 import pmCard from '../../../public/images/apply/pmCard.png';
 import designerCard from '../../../public/images/apply/designerCard.png';
 import developerCard from '../../../public/images/apply/developerCard.png';
+import applyCards from '../../../public/images/apply/applyCards.png';
 
 export default function Popup() {
   const [animate, setAnimate] = useState(false);
@@ -40,7 +41,7 @@ export default function Popup() {
       <div className="mb-12">
         <ApplyButton />
       </div>
-      <div className="relative flex justify-center items-end w-full max-w-4xl">
+      {/* <div className="relative flex justify-center items-end w-full max-w-4xl">
         <div className={`transform transition-transform duration-700 ${animate ? 'translate-y-0' : 'translate-y-full'} mb-4`}>
           <Image src={pmCard} alt="PM Card" className="" />
         </div>
@@ -49,8 +50,10 @@ export default function Popup() {
         </div>
         <div className={`transform transition-transform duration-700 delay-400 ${animate ? 'translate-y-0' : 'translate-y-full'} ml-[204px]`}>
           <Image src={developerCard} alt="Developer Card" className="" />
+        </div> */}
+        <div className={`w-[1380px] h-[700px] overflow-hidden relative transform transition-transform duration-700 ${animate ? 'translate-y-0' : 'translate-y-full'}`}>
+            <Image src={applyCards} alt="Apply Cards" className="w-full h-full" />
         </div>
-      </div>
     </div>
   );
 }
