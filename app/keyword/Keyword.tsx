@@ -38,21 +38,33 @@ const cards: CardData[] = [
   }
 ];
 
-const Keyword: React.FC = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
 
-  return (
-    <div className="h-screen w-screen flex justify-center bg-white-100">
-      <div className="flex">
-        <div className="">
-          {cards.map((_, index) => (
-            <Dot key={index} onHover={() => setActiveIndex(index)} />
-          ))}
+const Keyword: React.FC = () => {
+    const [activeIndex, setActiveIndex] = useState(0);
+    const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  
+    const colors = ['bg-red-500', 'bg-green-500', 'bg-yellow-500'];
+  
+    return (
+      <div className="h-screen w-screen flex justify-center">
+        <div className="flex">
+          <div className="space-y-4">
+            {cards.map((_, index) => (
+              <Dot
+                key={index}
+                color={hoveredIndex === index ? colors[index] : 'bg-gray-400'}
+                onHover={() => {
+                  setActiveIndex(index);
+                  setHoveredIndex(index);
+                }}
+                onLeave={() => setHoveredIndex(null)}
+              />
+            ))}
+          </div>
+          <Card card={cards[activeIndex]} />
         </div>
-        <Card card={cards[activeIndex]} />
       </div>
-    </div>
-  );
-}
+    );
+  }
 
 export default Keyword;
