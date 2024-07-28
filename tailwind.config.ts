@@ -221,6 +221,13 @@ const config = {
             opacity: '1',
           },
         },
+        'custom-bounce-in': {
+          '0%': { transform: 'translateY(1000px)' },
+          '20%, 50%, 80%, 100%': { transform: 'translateY(0)' },
+          '40%': { transform: 'translateY(-30px)' },
+          '60%': { transform: 'translateY(-15px)' },
+        },
+        
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
@@ -228,6 +235,7 @@ const config = {
         drop: 'drop 0.4s linear forwards 1000ms, scale-yellow 0.8s linear forwards 2100ms',
         'blow-up': 'blow-up 0.3s linear forwards',
         'blow-down': 'blow-down 0.3s linear forwards',
+        'custom-bounce-in': 'custom-bounce-in 1s ease-out forwards',
       },
       fontFamily: {
         pretendard: 'var(--font-pretendard)',
