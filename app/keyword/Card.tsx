@@ -12,7 +12,7 @@ interface CardProps {
 
 const Card: React.FC<CardProps> = ({ card }) => {
   return (
-    <div className='flex items-center'>
+    <div className='flex items-center transition-opacity duration-500'>
       <div className='flex-col'>
         <div className="text-[#ea4335] text-[22px] font-semibold font-suite leading-9">{card.subtitle}</div>
         <h2 className="text-5xl font-bold mt-[12px] relative">{card.title}</h2>
