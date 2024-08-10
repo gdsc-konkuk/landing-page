@@ -20,12 +20,12 @@ const Card: React.FC<CardProps> = ({ card }) => {
       const timer = setTimeout(() => {
         setCurrentCard(card);
         setOpacity(1);
-      }, 300);
+      }, 500);
       return () => clearTimeout(timer);
     }
   }, [card, currentCard]);
   return (
-    <div className='flex items-center transition-opacity duration-1000' style={{opacity}}>
+    <div className='flex items-center transition-opacity duration-500' style={{opacity}}>
       <div className='flex-col'>
         <div className="text-[#ea4335] text-[22px] font-semibold font-suite leading-9">{currentCard.subtitle}</div>
         <h2 className="text-5xl font-bold mt-[12px] relative">{currentCard.title}</h2>
