@@ -39,7 +39,7 @@ const cards: CardData[] = [
 const Keyword: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
-  const smallCiclceColor = ['bg-[#ea4335]', 'bg-[#33b540]', 'bg-[#fbbc04]'];
+  const smallCircle = ['bg-[#ea4335]', 'bg-[#33b540]', 'bg-[#fbbc04]'];
   const bigCircleColor = [
     'bg-[rgba(234,67,53,0.4)]', //color opacity 40%
     'bg-[rgba(51,181,64,0.4)]', 
@@ -53,7 +53,7 @@ const Keyword: React.FC = () => {
             <React.Fragment key={index}> 
               <Dot
                 key={index}
-                smallCiclceColor={activeIndex === index ? smallCiclceColor[index] : 'bg-[#A1A1A1]'} // dark gray color for small Circle
+                smallCircle={activeIndex === index ? smallCircle[index] : 'bg-[#A1A1A1]'} // dark gray color for small Circle
                 bigCircleColor={activeIndex === index ? bigCircleColor[index] : 'bg-[#D9D9D9]'} // light gray color for big Circle
                 onHover={() => setActiveIndex(index)}
                 onLeave={() => {}}

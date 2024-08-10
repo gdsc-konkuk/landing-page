@@ -3,11 +3,11 @@ import React from 'react';
 interface DotProps {
   onHover: () => void;
   onLeave: () => void;
-  smallCiclceColor: string;
+  smallCircle: string;
   bigCircleColor: string; //when hover event occurs, each hover color changes
 }
 
-const Dot: React.FC<DotProps> = ({ onHover, onLeave, smallCiclceColor, bigCircleColor }) => {
+const Dot: React.FC<DotProps> = ({ onHover, onLeave, smallCircle, bigCircleColor }) => {
   return (
     <div className="relative flex items-center justify-center">
       <div
@@ -16,7 +16,7 @@ const Dot: React.FC<DotProps> = ({ onHover, onLeave, smallCiclceColor, bigCircle
         onMouseLeave={onLeave}
       />
     <div
-      className={`absolute w-[15px] h-[15px] ${smallCiclceColor} rounded-full cursor-pointer`}
+      className={`absolute w-[15px] h-[15px] ${smallCircle} rounded-full cursor-pointer`}
       onMouseEnter={onHover}
       onMouseLeave={onLeave}
     />
