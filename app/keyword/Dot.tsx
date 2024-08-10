@@ -10,14 +10,13 @@ interface DotProps {
 const Dot: React.FC<DotProps> = ({ onHover, onLeave, smallCiclceColor, bigCircleColor }) => {
   return (
     <div className="relative flex items-center justify-center">
-      {/* 큰 원 (뒤쪽) */}
       <div
-        className={`absolute w-[23px] h-[23px] rounded-full ${bigCircleColor} transition-colors duration-300`}
+        className={`w-[23px] h-[23px] rounded-full ${bigCircleColor} transition-colors duration-300`}
         onMouseEnter={onHover}
         onMouseLeave={onLeave}
       />
     <div
-      className={`w-[15px] h-[15px] ${smallCiclceColor} rounded-full cursor-pointer`}
+      className={`absolute w-[15px] h-[15px] ${smallCiclceColor} rounded-full cursor-pointer`}
       onMouseEnter={onHover}
       onMouseLeave={onLeave}
     />
