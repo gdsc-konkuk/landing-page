@@ -221,6 +221,17 @@ const config = {
             opacity: '1',
           },
         },
+        slide: {
+          '0%': { transform: 'translateX(0%)', opacity: '1', zIndex: '10' },
+          '33.3%': {
+            transform: 'translateX(100%)',
+            opacity: '1',
+            zIndex: '10',
+          },
+          '35%': { opacity: '0' },
+          '66.6%': { transform: 'translateX(0%)', opacity: '0', zIndex: '1' },
+          '70%': { transform: 'translateX(0%)', opacity: '1', zIndex: '1' },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
@@ -228,6 +239,9 @@ const config = {
         drop: 'drop 0.4s linear forwards 1000ms, scale-yellow 0.8s linear forwards 2100ms',
         'blow-up': 'blow-up 0.3s linear forwards',
         'blow-down': 'blow-down 0.3s linear forwards',
+        'slide-0': 'slide 6s infinite',
+        'slide-2': 'slide 6s infinite 2s',
+        'slide-4': 'slide 6s infinite 4s',
       },
       fontFamily: {
         pretendard: 'var(--font-pretendard)',

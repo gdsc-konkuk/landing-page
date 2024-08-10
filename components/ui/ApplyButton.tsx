@@ -10,7 +10,7 @@ export default function ApplyButton({ className }: ApplyButtonProps) {
     <Link
       href="https://naver.com"
       className={cn(
-        'text-[#000] font-suite text-[28px] font-semibold w-[270px] h-[71px] rounded-[43px] bg-[#FBBC04] flex justify-center items-center px-[60px] py-[18px]',
+        'text-[#000] font-suite md:text-[28px] font-semibold md:w-[270px] md:h-[71px] rounded-[43px] bg-[#FBBC04] flex justify-center items-center px-[60px] py-[18px]',
         className,
       )}
     >
