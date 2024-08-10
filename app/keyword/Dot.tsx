@@ -12,12 +12,9 @@ const Dot: React.FC<DotProps> = ({ onHover, onLeave, smallCiclceColor, bigCircle
     <div className="relative flex items-center justify-center">
       {/* 큰 원 (뒤쪽) */}
       <div
-        className={`w-[25px] h-[25px] rounded-full ${smallCiclceColor} transition-colors duration-300`}
+        className={`absolute w-[23px] h-[23px] rounded-full ${bigCircleColor} transition-colors duration-300`}
         onMouseEnter={onHover}
         onMouseLeave={onLeave}
-        style={{
-          backgroundColor: `${smallCiclceColor.replace('700', '300')}`, // ex: red-700 -> red-300
-        }}
       />
     <div
       className={`w-[15px] h-[15px] ${smallCiclceColor} rounded-full cursor-pointer`}
