@@ -1,6 +1,7 @@
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
 import Link from 'next/link';
+import { Card, CardContent } from '@/components/ui/card';
 
 interface SolutionCardProps {
   title: string;
@@ -8,6 +9,7 @@ interface SolutionCardProps {
   imageSrc: string;
   link: string;
   className?: string;
+  isMobile?: boolean;
 }
 
 export default function SolutionCard({
@@ -16,7 +18,35 @@ export default function SolutionCard({
   imageSrc,
   link,
   className,
+  isMobile,
 }: SolutionCardProps) {
+  if (isMobile) {
+    return (
+      <Card className="flex h-full w-full justify-center">
+        <CardContent className="h-[413px] flex justify-center items-center">
+          <div className="flex h-[351px] w-[265px] flex-col items-center justify-center gap-5 rounded-[9px] bg-white p-6 px-4 py-6 shadow-lg">
+            <h1 className="self-start font-gangwon text-[20px] tracking-[1px]">
+              {title}
+            </h1>
+            <Image
+              src={imageSrc}
+              alt="pathpal"
+              width={229}
+              height={140}
+              className="h-[140px] w-[229px] object-cover"
+            />
+            <p className="w-[229px] font-suite text-[13px] leading-[25px]">
+              {description.join(' ')}
+            </p>
+            <p className="self-start font-suite text-[14px] text-black font-semibold">
+              <Link href={link}>{'-> '}자세히보기</Link>
+            </p>
+          </div>
+        </CardContent>
+      </Card>
+    );
+  }
+
   return (
     <div
       className={cn(
