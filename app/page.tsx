@@ -4,7 +4,6 @@ import Main from './_component/main/Main';
 import SolutionChallenge from './_component/solution-challenge/SolutionChallenge';
 import Review from './_component/review/Review';
 import Keyword from './keyword/Keyword';
-import ApplyKeywords from '@/app/_component/apply/ApplyKewords';
 
 import Apply from './_component/apply/Apply';
 export default function Home() {
@@ -16,7 +15,6 @@ export default function Home() {
       <Review />
       <SolutionChallenge />
       <Apply />
-      <ApplyKeywords />
       <Footer />
     </div>
   );
