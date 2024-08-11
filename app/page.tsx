@@ -11,8 +11,8 @@ export default function Home() {
     <div className="flex flex-col">
       <Header />
       <Main />
-      {/* <Keyword /> */}
-      {/* <Review /> */}
+      <Keyword />
+      <Review />
       <SolutionChallenge />
       <ApplyKeywords />
       <Footer />
