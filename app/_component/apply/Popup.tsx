@@ -21,7 +21,7 @@ export default function Popup() {
           }
         });
       },
-      { threshold: 0.5 }
+      { threshold: 0.2 }
     );
 
     if (popupRef.current) {
@@ -36,11 +36,30 @@ export default function Popup() {
   }, []);
 
   return (
-    <div className="flex items-center text-center mt-12" ref={popupRef}>
-      <div className={`flex flex-row w-[1380px] h-[700px] overflow-hidden relative ${animate ? 'animate__animated animate__bounceInUp' : 'translate-y-[1000px]'}`}>
-        <Image src={pmCard} alt="PM Card" className="w-[200.254px]"></Image>
-        <Image src={designerCard} alt="Desiner Card" className="w-[394.254px] "></Image>
-        <Image src={developerCard} alt="Developer Card" className="w-[394.254px] "></Image>
+    <div className="flex flex-col items-center justify-center text-center mt-12" ref={popupRef}>
+      <div
+        className={`w-[1380px] h-[700px] overflow-hidden relative ${animate ? 'animate__animated animate__bounceInUp' : 'translate-y-[1000px]'}`}
+        style={{
+          animationDuration: '1s', // 애니메이션 속도 설정
+          animationTimingFunction: 'ease-in-out', // 애니메이션 속도 곡선 설정
+          animationDelay: '0.1s', // 애니메이션 지연 시간 설정
+        }}
+      >
+        <Image
+          src={pmCard}
+          alt="PM Card"
+          className="absolute top-0 left-0 w-[360px] h-[439px]"
+        />
+        <Image
+          src={designerCard}
+          alt="Designer Card"
+          className="absolute left-[10%] right-[30%] w-[429px] h-[470px] z-10"
+        />
+        <Image
+          src={developerCard}
+          alt="Developer Card"
+          className="absolute top-[32px] right-0 w-[385px] h-[452px]"
+        />
       </div>
     </div>
   );
