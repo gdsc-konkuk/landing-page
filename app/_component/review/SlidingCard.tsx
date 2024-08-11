@@ -7,6 +7,7 @@ import {
   CarouselItem,
 } from "@/components/ui/carousel";
 import { Card, CardContent } from "@/components/ui/card";
+import { useIsMobile } from '@/hooks/useIsMobile';
 
 import reviewCardBuildwithAI from '../../../public/images/review/reviewCardBuildwithAI.png';
 import reviewCardDanggn from "../../../public/images/review/reviewCardDanggn.png";
@@ -65,7 +66,7 @@ const cards = [
   { 
     image: reviewCardKprintf, 
     title: "Kprintf",
-    description: "건국대학교는 최대 규모의 컨퍼런스인 Kprintf를 개최해 컨퍼런스 운영 경험과, 다양한 분야에 대한 세션을 통해 지식을 공유했어요"
+    description: "GDSC는 최대 규모의 컨퍼런스인 Kprintf를 개최해 컨퍼런스 운영 경험과, 다양한 분야에 대한 세션을 통해 지식을 공유했어요"
   },
   { 
     image: reviewCardMTandTrip, 
@@ -75,6 +76,53 @@ const cards = [
 ];
 
 export default function SlidingCard() {
+  const isMobile = useIsMobile();
+  if(isMobile) return(
+    <Carousel
+      opts={{
+        align: "start",
+        dragFree: true,
+      }}
+      className="select-none relative" // relative positioning 추가
+    >
+      <button
+        className="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 p-2 bg-gray-800 text-white rounded-full"
+        style={{ display: isMobile ? 'block' : 'none' }} // 모바일에서만 버튼 표시
+        onClick={() => {/* 좌측 이동 로직 */}}
+      >
+        &#8249;
+      </button>
+      <button
+        className="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 p-2 bg-gray-800 text-white rounded-full"
+        style={{ display: isMobile ? 'block' : 'none' }} // 모바일에서만 버튼 표시
+        onClick={() => {/* 우측 이동 로직 */}}
+      >
+        &#8250;
+      </button>
+      <CarouselContent>
+        {cards.map((card, index) => (
+          <CarouselItem key={index} className="basis-auto">
+            <div className="p-1">
+              <Card className="group relative overflow-hidden">
+                <CardContent className="p-0">
+                  <Image
+                    src={card.image}
+                    alt={`Review Card ${index + 1}`} 
+                    className={`${isMobile ? 'w-[265px] h-[180px]' : 'w-[552px] h-[371px]'} rounded-[22px] transition-all duration-300 group-hover:brightness-50`}
+                  />
+                  <div className="absolute inset-0 flex flex-col text-left justify-between items-start opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <h3 className="text-white text-[28px] font-semibold font-suite leading-10 tracking-wide mt-[28px] ml-[34px]">{card.title}</h3>
+                    <p className="text-white text-xl font-suite leading-10 p-[34px]">{card.description}</p>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </CarouselItem>
+        ))}
+      </CarouselContent>
+    </Carousel>
+  );
+}
   return (
     <Carousel
       opts={{
