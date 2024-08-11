@@ -8,10 +8,10 @@ export default function Apply() {
     <div className="flex flex-col items-center text-center mt-[256px]">
       <div className="relative flex flex-col items-center">
       <Image src={blueCharacter} alt="Blue Character" 
-      className="w-[128px] absolute top-[30px] left-1/2 transform translate-x-[30px]"   />
+      className="w-[128px] absolute -top-[105px] left-1/2 transform translate-x-[150px] z-10"   />
       <div className="flex items-center space-x-[11px]">
         <div className=' text-black text-[64px] font-bold'>GDSC Konkuk 2기와 </div> 
-        <ApplyKeywords />
+        <div className="z-5"><ApplyKeywords /></div>
       </div>
     </div>
         <div className='text-black text-3xl font-semibold mt-[40px] space-y-[8px]'>
