@@ -15,11 +15,8 @@ export default function Home() {
       {/* <Keyword /> */}
       {/* <Review /> */}
       <SolutionChallenge />
-<<<<<<< HEAD
       <Apply />
-=======
       <ApplyKeywords />
->>>>>>> 48a149c9baf94e5d82afd3f0476a39418bbce32d
       <Footer />
     </div>
   );
