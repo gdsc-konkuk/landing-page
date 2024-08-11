@@ -7,12 +7,13 @@ import Dot from './Dot';
 import keywordTogether from '../../public/images/keyword/keywordTogether.png';
 import keywordSharing from '../../public/images/keyword/keywordSharing.png';
 import keywordChallenge from '../../public/images/keyword/keywordChallenge.png';
+import { StaticImageData } from 'next/image';
 
 interface CardData {
   subtitle: string;
   title: string;
   description: string;
-  image: string;
+  image: StaticImageData;
 }
 
 const cards: CardData[] = [
@@ -44,8 +45,8 @@ const Keyword: React.FC = () => {
   const smallCircle = ['bg-[#ea4335]', 'bg-[#33b540]', 'bg-[#fbbc04]'];
   const bigCircleColor = [
     'bg-[rgba(234,67,53,0.4)]', //color opacity 40%
-    'bg-[rgba(51,181,64,0.4)]', 
-    'bg-[rgba(251,188,4,0.4)]'
+    'bg-[rgba(51,181,64,0.4)]',
+    'bg-[rgba(251,188,4,0.4)]',
   ];
   return (
     <div className="h-screen w-screen flex justify-center">
@@ -55,8 +56,12 @@ const Keyword: React.FC = () => {
             <React.Fragment key={index}>
               <Dot
                 key={index}
-                smallCircle={activeIndex === index ? smallCircle[index] : 'bg-[#A1A1A1]'} // dark gray color for small Circle
-                bigCircleColor={activeIndex === index ? bigCircleColor[index] : 'bg-[#D9D9D9]'} // light gray color for big Circle
+                smallCircle={
+                  activeIndex === index ? smallCircle[index] : 'bg-[#A1A1A1]'
+                } // dark gray color for small Circle
+                bigCircleColor={
+                  activeIndex === index ? bigCircleColor[index] : 'bg-[#D9D9D9]'
+                } // light gray color for big Circle
                 onHover={() => setActiveIndex(index)}
                 onLeave={() => { }}
               />
