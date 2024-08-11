@@ -1,30 +1,19 @@
 import Image from 'next/image';
-import React from "react";
-
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-} from "@/components/ui/carousel";
+import React, { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { useIsMobile } from '@/hooks/useIsMobile';
-import { useCarousel } from '@/components/ui/carousel';
 import LeftChevronIcon from '../../../public/icons/left-chevron.svg';
 
-
-
-import reviewCardBuildwithAI from '../../../public/images/review/reviewCardBuildwithAI.png';
 import reviewCardDanggn from "../../../public/images/review/reviewCardDanggn.png";
+import reviewCardGraduation from "../../../public/images/review/reviewCardGraduation.png";
+import reviewCardRegularSeminar from "../../../public/images/review/reviewCardRegularSeminar.png";
+import reviewCardHanyang from "../../../public/images/review/reviewCardHanyang.png";
+import reviewCardBuildwithAI from '../../../public/images/review/reviewCardBuildwithAI.png';
 import reviewCardFlutter from "../../../public/images/review/reviewCardFlutter.png";
 import reviewCardGDSCGermany from "../../../public/images/review/reviewCardGDSCGermany.png";
-import reviewCardGraduation from "../../../public/images/review/reviewCardGraduation.png";
-import reviewCardHanyang from "../../../public/images/review/reviewCardHanyang.png";
+import reviewCardWRTN from "../../../public/images/review/reviewCardWRTN.png";
 import reviewCardKprintf from "../../../public/images/review/reviewCardKprintf.png";
 import reviewCardMTandTrip from "../../../public/images/review/reviewCardMTandTrip.png";
-import reviewCardRegularSeminar from "../../../public/images/review/reviewCardRegularSeminar.png";
-import reviewCardWRTN from "../../../public/images/review/reviewCardWRTN.png";
-
-
 
 const cards = [
   { 
@@ -81,71 +70,93 @@ const cards = [
 
 export default function SlidingCard() {
   const isMobile = useIsMobile();
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [showDescription, setShowDescription] = useState(false);
+
+  const handlePrev = () => {
+    setCurrentIndex((prevIndex) => 
+      prevIndex === 0 ? cards.length - 1 : prevIndex - 1
+    );
+    setShowDescription(false);
+  };
+
+  const handleNext = () => {
+    setCurrentIndex((prevIndex) => 
+      prevIndex === cards.length - 1 ? 0 : prevIndex + 1
+    );
+    setShowDescription(false);
+  };
+
+  const toggleDescription = () => {
+    setShowDescription((prevState) => !prevState);
+  };
+
+  if (isMobile) {
+    return (
+      <div className="relative w-full flex items-center"> {/* items-center 추가 */}
+        <Card className="w-full" onClick={toggleDescription}>
+          <CardContent>
+            <Image
+              src={cards[currentIndex].image}
+              alt={`Review Card ${currentIndex + 1}`}
+              className="w-[265px] h-[180px] rounded-[22px]"
+            />
+            {showDescription && (
+              <div className="absolute inset-0 flex flex-col justify-end bg-black bg-opacity-60 text-white p-4 rounded-[22px]">
+                <h3 className="text-[20px] font-semibold font-suite">{cards[currentIndex].title}</h3>
+                <p className="text-[14px] font-suite mt-2">{cards[currentIndex].description}</p>
+              </div>
+            )}
+          </CardContent>
+        </Card>
+        <button 
+          onClick={handlePrev}
+          className="absolute top-1/2 left-0 transform -translate-y-1/2"
+        >
+          <Image
+            src={LeftChevronIcon}
+            alt="Previous"
+            width={24}
+            height={24}
+          />
+        </button>
+        <button 
+          onClick={handleNext}
+          className="absolute top-1/2 right-0 transform -translate-y-1/2 rotate-180"
+        >
+          <Image
+            src={LeftChevronIcon}
+            alt="Next"
+            width={24}
+            height={24}
+          />
+        </button>
+      </div>
+    );
+  }
 
   return (
-    <Carousel
-      opts={{
-        align: "start",
-        dragFree: true,
-      }}
-      className="select-none relative"
-    >
-      {isMobile && (
-        <>
-          <PreviousButton />
-          <NextButton />
-
-        </>
-      )}
-      <CarouselContent>
+    <div className="select-none relative">
+      <div className="flex overflow-x-auto">
         {cards.map((card, index) => (
-          <CarouselItem key={index} className="basis-auto">
-            <div className="p-1">
-              <Card className={`group relative overflow-hidden ${isMobile ? '' : 'hover:brightness-75'}`}>
-                <CardContent className="p-0">
-                  <Image
-                    src={card.image}
-                    alt={`Review Card ${index + 1}`} 
-                    className={`${isMobile ? 'w-[265px] h-[180px]' : 'w-[552px] h-[371px]'} rounded-[22px] transition-all duration-300 ${isMobile ? '' : 'group-hover:brightness-50'}`}
-                  />
-                  <div className={`absolute inset-0 flex flex-col text-left justify-between items-start opacity-0 transition-opacity duration-300 ${isMobile ? '' : 'group-hover:opacity-100'}`}>
-                    <h3 className="text-white text-[28px] font-semibold font-suite leading-10 tracking-wide mt-[28px] ml-[34px]">{card.title}</h3>
-                    <p className="text-white text-xl font-suite leading-10 p-[34px]">{card.description}</p>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-          </CarouselItem>
+          <div key={index} className="flex-shrink-0 p-1">
+            <Card className="group relative overflow-hidden">
+              <CardContent>
+                <Image
+                  src={card.image}
+                  alt={`Review Card ${index + 1}`} 
+                  className="w-[552px] h-[371px] rounded-[22px] transition-all duration-300 group-hover:brightness-50"
+                />
+                <div className="absolute inset-0 flex flex-col text-left justify-between items-start opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                  <h3 className="text-white text-[28px] font-semibold font-suite leading-10 tracking-wide mt-[28px] ml-[34px]">{card.title}</h3>
+                  <p className="text-white text-xl font-suite leading-10 p-[34px]">{card.description}</p>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
         ))}
-      </CarouselContent>
-    </Carousel>
+      </div>
+    </div>
   );
 }
 
-function PreviousButton() {
-  const { scrollPrev } = useCarousel();
-  return (
-    <Image
-      src={LeftChevronIcon}
-      alt="left-chevron"
-      width={24}
-      height={24}
-      onClick={scrollPrev}
-      className="absolute top-[175px] left-0"
-    />
-  );
-}
-
-function NextButton() {
-  const { scrollNext } = useCarousel();
-  return (
-    <Image
-      src={LeftChevronIcon}
-      alt="right-chevron"
-      width={24}
-      height={24}
-      onClick={scrollNext}
-      className="absolute top-[175px] right-0 transform rotate-180"
-    />
-  );
-}

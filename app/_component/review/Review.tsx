@@ -28,7 +28,7 @@ export default function Review({}){
                 다양한 활동을 통해 함께 성장할 수 있어요.
               </p>
             </div>
-            <div className='mt-[50px]'>
+            <div className='mt-[50px] flex items-center justify-center '>
               <SlidingCard />
             </div>
           </div>
@@ -40,7 +40,7 @@ export default function Review({}){
 
   return (
     <div className="h-screen w-screen flex justify-center items-center">
-      <div className="w-[80%}] text-center"> {/* text-center 클래스를 추가하여 중앙 정렬 */}
+      <div className="w-[80%}] text-center">
         <div>
           <div>
             <div className="text-[#EA4335] text-[64px] font-normal font-gangwon">
