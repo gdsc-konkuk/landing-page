@@ -70,17 +70,19 @@ const Keyword: React.FC = () => {
 
   if (isMobile) { //mobile
     return (
-      <div className="flex flex-col space-y-4">
+      <div className="flex flex-col space-y-4 mt-[169.02px] ml-[24px]">
         {cards.map((card, index) => (
-          <div key={index} className="flex flex-col items-center space-x-4">
-            <div className="text-[#ea4335] text-[22px] font-semibold font-suite leading-9">{card.subtitle}</div>
+          <div key={index}>
+            <div className="text-[#ea4335] text-[14px] font-suite">{card.subtitle}</div>
             <div className="text-5xl font-bold mt-[12px] relative">{card.title}</div>
-            <img src={card.mobileImage.src} alt={card.subtitle} className="w-[280px] h-[194px]" />
-            <div>
-
-              <div className="w-[306px] h-[120px] text-[#606060] text-[28px] font-normal font-suite leading-10 mt-[23.12px]">{card.description}</div>
+            <div  className="flex flex-row justify-center items-center space-x-[16px] p-[37px]">
+              <div className="h-[255px] w-[2px] bg-[#AFAFAF] mx-auto rounded-full "></div>
+                <div>
+                  <img src={card.mobileImage.src} alt={card.subtitle} className="w-[280px] h-[194px] mt-[17px]" />
+                  <div className="w-[270px] h-[48px] text-[#606060] text-[14px] font-normal font-suite mt-[20px]">{card.description}</div>
+                </div>
+              </div>
             </div>
-          </div>
         ))}
       </div>
     );
