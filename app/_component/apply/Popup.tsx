@@ -2,6 +2,9 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import applyCards from '../../../public/images/apply/applyCards.png';
+import pmCard from '../../../public/images/apply/pmCard.png';
+import designCard from '../../../public/images/apply/designCard.png';
+import developerCard from '../../../public/images/apply/developerCard.png';
 import ApplyButton from '@/components/ui/ApplyButton';
 import 'animate.css'; //bounce animations library
 
@@ -36,9 +39,6 @@ export default function Popup() {
 
   return (
     <div className="flex flex-col items-center text-center mt-12" ref={popupRef}>
-      <div className="mb-12">
-        <ApplyButton />
-      </div>
       <div className={`w-[1380px] h-[700px] overflow-hidden relative ${animate ? 'animate__animated animate__bounceInUp' : 'translate-y-[1000px]'}`}>
         <Image src={applyCards} alt="Apply Cards" className="w-full h-full" />
       </div>
