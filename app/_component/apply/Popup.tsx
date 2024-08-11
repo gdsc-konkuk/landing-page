@@ -36,7 +36,7 @@ export default function Popup() {
   }, []);
 
   return (
-    <div className="flex flex-col items-center justify-center text-center mt-12" ref={popupRef}>
+    <div className="flex flex-col items-center justify-center text-center" ref={popupRef}>
       <div
         className={`w-[1380px] h-[700px] overflow-hidden relative ${animate ? 'animate__animated animate__bounceInUp' : 'translate-y-[1000px]'}`}
         style={{
