@@ -111,7 +111,7 @@ export default function SlidingCard() {
         </Card>
         <button 
           onClick={handlePrev}
-          className="absolute top-1/2 left-0 transform -translate-y-1/2"
+          className="absolute top-1/2 left-[-40px] transform -translate-y-1/2"
         >
           <Image
             src={LeftChevronIcon}
@@ -122,7 +122,7 @@ export default function SlidingCard() {
         </button>
         <button 
           onClick={handleNext}
-          className="absolute top-1/2 right-0 transform -translate-y-1/2 rotate-180"
+          className="absolute top-1/2 right-[-40px] transform -translate-y-1/2 rotate-180"
         >
           <Image
             src={LeftChevronIcon}

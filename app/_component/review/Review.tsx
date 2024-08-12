@@ -28,7 +28,7 @@ export default function Review({}){
                 다양한 활동을 통해 함께 성장할 수 있어요.
               </p>
             </div>
-            <div className='mt-[50px] '>
+            <div className='flex justify-center text-center items-center mt-[50px]'>
               <SlidingCard />
             </div>
           </div>
