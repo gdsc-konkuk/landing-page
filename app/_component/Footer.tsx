@@ -37,7 +37,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="flex items-center gap-[6px] md:gap-[15px] mt-[16px] md:mt-0">
-          <Link href="https://www.instagram.com" target="_blank">
+          <Link href="https://www.instagram.com/gdsc.konkuk" target="_blank">
             <Image
               src="/images/footer/instagram.svg"
               alt="instagram"
@@ -46,7 +46,7 @@ export default function Footer() {
               className="h-6 md:h-[60px] w-6 md:w-[60px]"
             />
           </Link>
-          <Link href="https://github.com" target="_blank">
+          <Link href="https://github.com/gdsc-konkuk" target="_blank">
             <Image
               src="/images/footer/github.svg"
               alt="github"
