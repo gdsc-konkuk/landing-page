@@ -17,6 +17,7 @@ interface CardData {
   title: string;
   description: string;
   image: StaticImageData;
+  
 }
 
 const cards: CardData[] = [
@@ -53,7 +54,7 @@ const Keyword: React.FC = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 780);
+      setIsMobile(window.innerWidth <= 768);
     };
 
     // Initial check
