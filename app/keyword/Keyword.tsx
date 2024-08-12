@@ -17,14 +17,14 @@ interface CardData {
   title: string;
   description: string;
   image: StaticImageData;
-  
+  mobileImage: StaticImageData;
+
 }
 
 const cards: CardData[] = [
   {
     image: keywordTogether,
     mobileImage: mobileTogether,
-
     subtitle: '함께',
     title: 'Together',
     description:
