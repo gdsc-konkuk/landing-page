@@ -1,12 +1,15 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Card from './Card';
 import Dot from './Dot';
 
 import keywordTogether from '../../public/images/keyword/keywordTogether.png';
 import keywordSharing from '../../public/images/keyword/keywordSharing.png';
 import keywordChallenge from '../../public/images/keyword/keywordChallenge.png';
+import mobileTogether from '../../public/images/keyword/mobileTogether.png';
+import mobileSharing from '../../public/images/keyword/mobileSharing.png';
+import mobileChallenge from '../../public/images/keyword/mobileChallenge.png';
 import { StaticImageData } from 'next/image';
 
 interface CardData {
@@ -19,6 +22,8 @@ interface CardData {
 const cards: CardData[] = [
   {
     image: keywordTogether,
+    mobileImage: mobileTogether,
+
     subtitle: '함께',
     title: 'Together',
     description:
@@ -26,6 +31,7 @@ const cards: CardData[] = [
   },
   {
     image: keywordSharing,
+    mobileImage: mobileSharing,
     subtitle: '공유',
     title: 'Sharing',
     description:
@@ -33,6 +39,8 @@ const cards: CardData[] = [
   },
   {
     image: keywordChallenge,
+    
+    mobileImage: mobileChallenge,
     subtitle: '도전',
     title: 'Challenge',
     description: 'GDSC Konkuk에서 열정을 가지고 도전하며 발전할 수 있습니다.',
@@ -40,14 +48,64 @@ const cards: CardData[] = [
 ];
 
 const Keyword: React.FC = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(0); 
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 780);
+    };
+
+    // Initial check
+    handleResize();
+
+    // Add event listener for window resize
+    window.addEventListener('resize', handleResize);
+
+    // Cleanup event listener on component unmount
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+  if (isMobile) {
+    return (
+      <div className="flex  h-screen w-screen justify-center items-center mt-[169.02px] md:w-[80%]">
+        <div className="flex flex-col ">
+          {cards.map((card, index) => (
+            <div key={index}>
+              <div className="text-[#ea4335] text-[14px] font-suite mt-[50px]">
+                {card.subtitle}
+              </div>
+              <div className="text-5xl font-bold mt-[4px] relative">
+                {card.title}
+              </div>
+              <div className="flex flex-row justify-center items-center space-x-[16px] mt-[17px] ">
+                <div className="h-[255px] w-[2px] bg-[#AFAFAF] mx-auto rounded-full "></div>
+                <div>
+                  <img
+                    src={card.mobileImage.src}
+                    alt={card.subtitle}
+                    className="w-[280px] h-[194px] mt-[17px]"
+                  />
+                  <div className="w-[270px] h-[48px] text-[#606060] text-[14px] font-normal font-suite mt-[20px]">
+                    {card.description}
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    );
+  }
 
   const smallCircle = ['bg-[#ea4335]', 'bg-[#33b540]', 'bg-[#fbbc04]'];
   const bigCircleColor = [
-    'bg-[rgba(234,67,53,0.4)]', //color opacity 40%
+    'bg-[rgba(234,67,53,0.4)]', // color opacity 40%
     'bg-[rgba(51,181,64,0.4)]',
     'bg-[rgba(251,188,4,0.4)]',
   ];
+
   return (
     <div className="h-screen w-screen flex justify-center">
       <div className="flex items-center">
@@ -55,7 +113,6 @@ const Keyword: React.FC = () => {
           {cards.map((_, index) => (
             <React.Fragment key={index}>
               <Dot
-                key={index}
                 smallCircle={
                   activeIndex === index ? smallCircle[index] : 'bg-[#A1A1A1]'
                 } // dark gray color for small Circle
