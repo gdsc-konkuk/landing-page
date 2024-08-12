@@ -102,9 +102,9 @@ export default function SlidingCard() {
               className="w-full h-[180px] rounded-[22px]"
             />
             {showDescription && (
-              <div className="absolute inset-0 flex flex-col text-left justify-between items-start bg-black bg-opacity-60 p-4 rounded-[22px]">
+              <div className="absolute inset-0 flex flex-col text-left justify-between items-start bg-black bg-opacity-60 rounded-[22px]">
                 <h3 className="text-white text-[14px] font-semibold font-suite leading-10  mt-[14px] ml-[14px]">{cards[currentIndex].title}</h3>
-                <p className="text-white text-[10px] font-suite p-[34px]">{cards[currentIndex].description}</p>
+                <p className="text-white text-[10px] font-suite p-[14px]">{cards[currentIndex].description}</p>
               </div>
             )}
           </CardContent>
