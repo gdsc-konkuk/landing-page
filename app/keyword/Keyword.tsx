@@ -68,13 +68,15 @@ const Keyword: React.FC = () => {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
+  const textColor = ['#ea4335', '#33b540', '#fbbc04']; 
   if (isMobile) {
     return (
       <div className="flex  h-screen w-screen justify-center items-center mt-[169.02px] md:w-[80%]">
         <div className="flex flex-col ">
           {cards.map((card, index) => (
             <div key={index}>
-              <div className="text-[#ea4335] text-[14px] font-suite mt-[50px]">
+              {/* subtitle 색상을 activeIndex에 맞춰 변경 */}
+              <div className="text-[14px] font-suite mt-[50px]" style={{ color: textColor[index % textColor.length] }}>
                 {card.subtitle}
               </div>
               <div className="text-5xl font-bold mt-[4px] relative">
