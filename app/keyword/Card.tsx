@@ -8,9 +8,11 @@ interface CardProps {
     description: string;
     image: StaticImageData;
   };
+  index: number; 
 }
 
-const Card: React.FC<CardProps> = ({ card }) => {
+const Card: React.FC<CardProps> = ({ card,index }) => {
+  const textColor = ['#ea4335', '#33b540', '#fbbc04'];
   const [opacity, setOpacity] = useState(1);
   const [currentCard, setCurrentCard] = useState(card);
 
@@ -30,7 +32,10 @@ const Card: React.FC<CardProps> = ({ card }) => {
       style={{ opacity }}
     >
       <div className="flex-col">
-        <div className="text-[#ea4335] text-[22px] font-semibold font-suite leading-9">
+      <div 
+          className={`text-[22px] font-semibold font-suite leading-9`} 
+          style={{ color: textColor[index % textColor.length] }} 
+        >
           {currentCard.subtitle}
         </div>
         <h2 className="text-5xl font-bold mt-[12px] relative">
