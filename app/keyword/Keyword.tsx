@@ -17,6 +17,7 @@ interface CardData {
   title: string;
   description: string;
   image: StaticImageData;
+  mobileImage: StaticImageData;
 }
 
 const cards: CardData[] = [
