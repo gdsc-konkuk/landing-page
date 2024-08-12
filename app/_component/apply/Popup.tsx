@@ -48,17 +48,17 @@ export default function Popup() {
         <Image
           src={pmCard}
           alt="PM Card"
-          className="absolute top-0 left-0 w-[360px] h-[439px]"
+          className="absolute top-0 left-[5%] w-[360px] h-[439px]"
         />
         <Image
           src={designerCard}
           alt="Designer Card"
-          className="absolute left-[10%] right-[30%] w-[429px] h-[470px] z-10"
+          className="absolute left-[15%] right-[30%] w-[429px] h-[470px] z-10"
         />
         <Image
           src={developerCard}
           alt="Developer Card"
-          className="absolute top-[32px] right-0 w-[385px] h-[452px]"
+          className="absolute top-0 right-0 w-[385px] h-[452px]"
         />
       </div>
     </div>
