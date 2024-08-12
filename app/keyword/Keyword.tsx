@@ -130,7 +130,7 @@ const Keyword: React.FC = () => {
           ))}
         </div>
         <div className="ml-[41px] hidden md:block">
-          <Card card={cards[activeIndex]} />
+          <Card card={cards[activeIndex]} index={activeIndex} />
         </div>
       </div>
     </div>
