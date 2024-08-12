@@ -53,7 +53,7 @@ const Keyword: React.FC = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768);
+      setIsMobile(window.innerWidth <= 780);
     };
 
     // Initial check
