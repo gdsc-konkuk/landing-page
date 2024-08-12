@@ -25,19 +25,19 @@ export default function Apply() {
       <div className="relative flex flex-col items-center">
         <div className="w-[128px] absolute -top-[70px] left-1/2 transform -translate-x-1/2 " />
         <div className="flex flex-col items-center space-y-[11px]">
-          <div className="text-black text-[24px] font-bold">GDSC Konkuk 2기와 </div>
+          <div className="text-black text-[24px] font-bold whitespace-nowrap">GDSC Konkuk 2기와</div>
           <ApplyKeywords isMobile={isMobile} />
         </div>
       </div>
       <Popup />
-      <div className="text-[#3B3B3B] text-[12px] font-suite mt-[20px] space-y-[8px]">
+      <div className="text-[#3B3B3B] text-[12px] font-suite mt-[20px] space-y-[8px] whitespace-nowrap">
         <p>GDSC와 함께 가치를 공유하고 성장하고 싶다면,</p>
         <p>2024.08.01.~2025.08.01</p>
       </div>
       <div className="flex items-center justify-center">
-        <ApplyButton className="mt-8 md:mt-14 w-32 h-9" />
+        <ApplyButton className="mt-[23px] md:mt-[56px] w-[128px] h-[37px]" />
       </div>    
-      </div>
+    </div>
   ) : (
     <div className="flex flex-col items-center text-center mt-[256px]">
       <div className="relative flex flex-col items-center">
@@ -46,18 +46,16 @@ export default function Apply() {
           alt="Blue Character" 
           className="w-[128px] absolute -top-[105px] left-1/2 transform translate-x-[150px] z-10" 
         />
-        <div className="flex items-center space-x-[11px]">
-          <div className=' text-black text-[64px] font-bold'>GDSC Konkuk 2기와 </div> 
-          <div className="z-5"><ApplyKeywords isMobile={isMobile} /></div>
+        <div className="flex items-center space-x-[11px] whitespace-nowrap">
+          <div className='text-black text-[64px] font-bold whitespace-nowrap'>GDSC Konkuk 2기와</div> 
+          <div className="z-5 whitespace-nowrap"><ApplyKeywords isMobile={isMobile} /></div>
         </div>
       </div>
-      <div className='text-black text-3xl font-semibold mt-[40px] space-y-[8px]'>
+      <div className='text-black text-3xl font-semibold mt-[40px] space-y-[8px] whitespace-nowrap'>
         <p>GDSC와 함께 가치를 공유하고 성장하고 싶다면,</p>
         <p>2024.08.01.~2025.08.01</p>
       </div>
-      <div className="mt-[45px]">
-        <ApplyButton />
-      </div>
+      <ApplyButton className="mt-[23px] md:mt-[56px] w-[128px] h-[37px]" />
       <Popup />
     </div>
   );
