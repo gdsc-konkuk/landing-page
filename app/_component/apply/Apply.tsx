@@ -29,16 +29,15 @@ export default function Apply() {
           <ApplyKeywords isMobile={isMobile} />
         </div>
       </div>
-
       <Popup />
-      <div className="text-black text-xl font-semibold mt-[20px] space-y-[8px]">
+      <div className="text-[#3B3B3B] text-[12px] font-suite mt-[20px] space-y-[8px]">
         <p>GDSC와 함께 가치를 공유하고 성장하고 싶다면,</p>
         <p>2024.08.01.~2025.08.01</p>
       </div>
-      <div className="mt-[30px]">
-        <ApplyButton />
+      <div className="flex items-center justify-center">
+        <ApplyButton className="mt-8 md:mt-14 w-32 h-9" />
+      </div>    
       </div>
-    </div>
   ) : (
     <div className="flex flex-col items-center text-center mt-[256px]">
       <div className="relative flex flex-col items-center">
