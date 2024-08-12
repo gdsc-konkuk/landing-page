@@ -1,4 +1,4 @@
-"use client"; 
+"use client";
 
 import React from 'react';
 import SlidingCard from './SlidingCard';
@@ -9,8 +9,8 @@ export default function Review({}){
   if (isMobile) {
     // 모바일 화면용 레이아웃
     return (
-      <div className="h-screen w-screen flex justify-center items-center">
-        <div className="w-[80%] text-center">
+      <div className="h-screen w-screen flex flex-col justify-center items-center ">
+        <div className="w-[80%] flex justify-center text-center items-center">
           <div>
             <div className="text-[#EA4335] text-[30px] font-normal font-gangwon">
               <span className='tracking-wide'>
@@ -28,7 +28,7 @@ export default function Review({}){
                 다양한 활동을 통해 함께 성장할 수 있어요.
               </p>
             </div>
-            <div className='mt-[50px] flex items-center justify-center '>
+            <div className='mt-[50px] '>
               <SlidingCard />
             </div>
           </div>

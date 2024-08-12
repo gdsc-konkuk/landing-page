@@ -93,18 +93,18 @@ export default function SlidingCard() {
 
   if (isMobile) {
     return (
-      <div className="relative w-full flex items-center"> {/* items-center 추가 */}
-        <Card className="w-full" onClick={toggleDescription}>
+      <div className="relative w-[80%] flex justify-center items-center">
+        <Card className=" w-[265px] h-[180px]" onClick={toggleDescription}>
           <CardContent>
             <Image
               src={cards[currentIndex].image}
               alt={`Review Card ${currentIndex + 1}`}
-              className="w-[265px] h-[180px] rounded-[22px]"
+              className="w-full h-[180px] rounded-[22px]"
             />
             {showDescription && (
-              <div className="absolute inset-0 flex flex-col justify-end bg-black bg-opacity-60 text-white p-4 rounded-[22px]">
-                <h3 className="text-[20px] font-semibold font-suite">{cards[currentIndex].title}</h3>
-                <p className="text-[14px] font-suite mt-2">{cards[currentIndex].description}</p>
+              <div className="absolute inset-0 flex flex-col text-left justify-between items-start bg-black bg-opacity-60 p-4 rounded-[22px]">
+                <h3 className="text-white text-[14px] font-semibold font-suite leading-10  mt-[14px] ml-[14px]">{cards[currentIndex].title}</h3>
+                <p className="text-white text-[10px] font-suite p-[34px]">{cards[currentIndex].description}</p>
               </div>
             )}
           </CardContent>
