@@ -67,23 +67,34 @@ const Keyword: React.FC = () => {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
-
-  if (isMobile) { //mobile
+  if (isMobile) {
     return (
-      <div className="flex flex-col space-y-4 mt-[169.02px] ml-[24px]">
-        {cards.map((card, index) => (
-          <div key={index}>
-            <div className="text-[#ea4335] text-[14px] font-suite">{card.subtitle}</div>
-            <div className="text-5xl font-bold mt-[12px] relative">{card.title}</div>
-            <div  className="flex flex-row justify-center items-center space-x-[16px] p-[37px]">
-              <div className="h-[255px] w-[2px] bg-[#AFAFAF] mx-auto rounded-full "></div>
+      <div className="flex  h-screen w-screen justify-center items-center mt-[169.02px] md:w-[80%]">
+        <div className="flex flex-col ">
+          {cards.map((card, index) => (
+            <div key={index}>
+              <div className="text-[#ea4335] text-[14px] font-suite mt-[50px]">
+                {card.subtitle}
+              </div>
+              <div className="text-5xl font-bold mt-[4px] relative">
+                {card.title}
+              </div>
+              <div className="flex flex-row justify-center items-center space-x-[16px] mt-[17px] ">
+                <div className="h-[255px] w-[2px] bg-[#AFAFAF] mx-auto rounded-full "></div>
                 <div>
-                  <img src={card.mobileImage.src} alt={card.subtitle} className="w-[280px] h-[194px] mt-[17px]" />
-                  <div className="w-[270px] h-[48px] text-[#606060] text-[14px] font-normal font-suite mt-[20px]">{card.description}</div>
+                  <img
+                    src={card.mobileImage.src}
+                    alt={card.subtitle}
+                    className="w-[280px] h-[194px] mt-[17px]"
+                  />
+                  <div className="w-[270px] h-[48px] text-[#606060] text-[14px] font-normal font-suite mt-[20px]">
+                    {card.description}
+                  </div>
                 </div>
               </div>
             </div>
-        ))}
+          ))}
+        </div>
       </div>
     );
   }
