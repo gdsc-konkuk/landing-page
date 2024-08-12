@@ -11,21 +11,21 @@ export default function ApplyKeywords({ isMobile }: ApplyKeywordsProps) {  retur
       }`}
     >
       <div
-        className={`absolute inset-0 flex h-full w-full items-center justify-center ${
+        className={`absolute inset-0 flex h-full w-full animate-slide-4 items-center justify-center ${
           isMobile ? 'rounded-[12px]' : 'rounded-[24px]'
         } bg-[#4285F4]`}
       >
         도전하기
       </div>
       <div
-        className={`absolute inset-0 flex h-full w-full items-center justify-center ${
+        className={`absolute inset-0 flex h-full w-full animate-slide-2 items-center justify-center ${
           isMobile ? 'rounded-[12px]' : 'rounded-[24px]'
         } bg-[#34A853]`}
       >
         함께하기
       </div>
       <div
-        className={`absolute inset-0 flex h-full w-full items-center justify-center ${
+        className={`absolute inset-0 flex h-full w-full animate-slide-0 items-center justify-center ${
           isMobile ? 'rounded-[12px]' : 'rounded-[24px]'
         } bg-[#FBBC04]`}
       >

@@ -144,7 +144,7 @@ export default function SlidingCard() {
               <CardContent>
                 <Image
                   src={card.image}
-                  alt={`Review Card ${index + 1}`} 
+                  alt={`Review Card ${index + 1}`}
                   className="w-[552px] h-[371px] rounded-[22px] transition-all duration-300 group-hover:brightness-50"
                 />
                 <div className="absolute inset-0 flex flex-col text-left justify-between items-start opacity-0 transition-opacity duration-300 group-hover:opacity-100">
