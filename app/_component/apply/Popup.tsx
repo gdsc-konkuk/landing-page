@@ -47,7 +47,7 @@ export default function Popup() {
 
   if (isMobile) {
     return (
-      <div className="flex justify-center h-screen w-screen w-[382.05px] h-[278.69px] relative">
+      <div className="flex justify-center w-[382.05px] h-[278.69px] relative">
         <Image
           src={mobileCard}
           alt="Mobile Card"
