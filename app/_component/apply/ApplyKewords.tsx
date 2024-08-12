@@ -1,5 +1,8 @@
-export default function ApplyKeywords({ isMobile }) {
-  return (
+interface ApplyKeywordsProps {
+  isMobile: boolean;
+}
+
+export default function ApplyKeywords({ isMobile }: ApplyKeywordsProps) {  return (
     <div
       className={`relative overflow-hidden font-bold ${
         isMobile
