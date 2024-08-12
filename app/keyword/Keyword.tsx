@@ -18,13 +18,13 @@ interface CardData {
   description: string;
   image: StaticImageData;
   mobileImage: StaticImageData;
+
 }
 
 const cards: CardData[] = [
   {
     image: keywordTogether,
     mobileImage: mobileTogether,
-
     subtitle: '함께',
     title: 'Together',
     description:
@@ -54,7 +54,7 @@ const Keyword: React.FC = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 780);
+      setIsMobile(window.innerWidth <= 768);
     };
 
     // Initial check

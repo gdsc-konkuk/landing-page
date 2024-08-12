@@ -1,25 +1,19 @@
 import Image from 'next/image';
-import React from "react";
-
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-} from "@/components/ui/carousel";
+import React, { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
+import { useIsMobile } from '@/hooks/useIsMobile';
+import LeftChevronIcon from '../../../public/icons/left-chevron.svg';
 
-import reviewCardBuildwithAI from '../../../public/images/review/reviewCardBuildwithAI.png';
 import reviewCardDanggn from "../../../public/images/review/reviewCardDanggn.png";
+import reviewCardGraduation from "../../../public/images/review/reviewCardGraduation.png";
+import reviewCardRegularSeminar from "../../../public/images/review/reviewCardRegularSeminar.png";
+import reviewCardHanyang from "../../../public/images/review/reviewCardHanyang.png";
+import reviewCardBuildwithAI from '../../../public/images/review/reviewCardBuildwithAI.png';
 import reviewCardFlutter from "../../../public/images/review/reviewCardFlutter.png";
 import reviewCardGDSCGermany from "../../../public/images/review/reviewCardGDSCGermany.png";
-import reviewCardGraduation from "../../../public/images/review/reviewCardGraduation.png";
-import reviewCardHanyang from "../../../public/images/review/reviewCardHanyang.png";
+import reviewCardWRTN from "../../../public/images/review/reviewCardWRTN.png";
 import reviewCardKprintf from "../../../public/images/review/reviewCardKprintf.png";
 import reviewCardMTandTrip from "../../../public/images/review/reviewCardMTandTrip.png";
-import reviewCardRegularSeminar from "../../../public/images/review/reviewCardRegularSeminar.png";
-import reviewCardWRTN from "../../../public/images/review/reviewCardWRTN.png";
-
-
 
 const cards = [
   { 
@@ -65,7 +59,7 @@ const cards = [
   { 
     image: reviewCardKprintf, 
     title: "Kprintf",
-    description: "건국대학교는 최대 규모의 컨퍼런스인 Kprintf를 개최해 컨퍼런스 운영 경험과, 다양한 분야에 대한 세션을 통해 지식을 공유했어요"
+    description: "GDSC는 최대 규모의 컨퍼런스인 Kprintf를 개최해 컨퍼런스 운영 경험과, 다양한 분야에 대한 세션을 통해 지식을 공유했어요"
   },
   { 
     image: reviewCardMTandTrip, 
@@ -75,39 +69,94 @@ const cards = [
 ];
 
 export default function SlidingCard() {
-  return (
-    <Carousel
-      opts={{
-        align: "start",
-        dragFree: true, //More natural drag-MinboyKim tip
-      }}
-      className="select-none" //to prevent select text-MinboyKim tip
-    >
-      <CarouselContent>
-        {cards.map((card, index) => (
-          <CarouselItem key={index}
-          // className="md:basis-1/2 lg:basis-1/3">
-          //flex-basis: auto"
-          className="basis-auto">
-            <div className="p-1">
-              <Card className="group relative overflow-hidden">
-              <CardContent className="p-0">
-                  <Image
-                    src={card.image}
-                    alt={`Review Card ${index + 1}`} 
-                    className="w-[552px] h-[371px] rounded-[22px] transition-all duration-300 group-hover:brightness-50"
-                  />
-                  <div className="absolute inset-0 flex flex-col text-left justify-between items-start opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <h3 className="text-white text-[28px] font-semibold font-suite leading-10 tracking-wide mt-[28px] ml-[34px]">{card.title}</h3>
-                    <p className="text-white text-xl font-suite leading-10 p-[34px]">{card.description}</p>
-                  </div>
+  const isMobile = useIsMobile();
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [showDescription, setShowDescription] = useState(false);
 
-                </CardContent>
-              </Card>
-            </div>
-          </CarouselItem>
+  const handlePrev = () => {
+    setCurrentIndex((prevIndex) => 
+      prevIndex === 0 ? cards.length - 1 : prevIndex - 1
+    );
+    setShowDescription(false);
+  };
+
+  const handleNext = () => {
+    setCurrentIndex((prevIndex) => 
+      prevIndex === cards.length - 1 ? 0 : prevIndex + 1
+    );
+    setShowDescription(false);
+  };
+
+  const toggleDescription = () => {
+    setShowDescription((prevState) => !prevState);
+  };
+
+  if (isMobile) {
+    return (
+      <div className="relative w-[80%] flex justify-center items-center">
+        <Card className=" w-[265px] h-[180px]" onClick={toggleDescription}>
+          <CardContent>
+            <Image
+              src={cards[currentIndex].image}
+              alt={`Review Card ${currentIndex + 1}`}
+              className="w-full h-[180px] rounded-[22px]"
+            />
+            {showDescription && (
+              <div className="absolute inset-0 flex flex-col text-left justify-between items-start bg-black bg-opacity-60 rounded-[22px]">
+                <h3 className="text-white text-[14px] font-semibold font-suite leading-10  mt-[14px] ml-[14px]">{cards[currentIndex].title}</h3>
+                <p className="text-white text-[10px] font-suite p-[14px]">{cards[currentIndex].description}</p>
+              </div>
+            )}
+          </CardContent>
+        </Card>
+        <button 
+          onClick={handlePrev}
+          className="absolute top-1/2 left-[-40px] transform -translate-y-1/2"
+        >
+          <Image
+            src={LeftChevronIcon}
+            alt="Previous"
+            width={24}
+            height={24}
+          />
+        </button>
+        <button 
+          onClick={handleNext}
+          className="absolute top-1/2 right-[-40px] transform -translate-y-1/2 rotate-180"
+        >
+          <Image
+            src={LeftChevronIcon}
+            alt="Next"
+            width={24}
+            height={24}
+          />
+        </button>
+      </div>
+    );
+  }
+
+  return (
+    <div className="select-none relative">
+      <div className="flex overflow-x-auto">
+        {cards.map((card, index) => (
+          <div key={index} className="flex-shrink-0 p-1">
+            <Card className="group relative overflow-hidden">
+              <CardContent>
+                <Image
+                  src={card.image}
+                  alt={`Review Card ${index + 1}`} 
+                  className="w-[552px] h-[371px] rounded-[22px] transition-all duration-300 group-hover:brightness-50"
+                />
+                <div className="absolute inset-0 flex flex-col text-left justify-between items-start opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                  <h3 className="text-white text-[28px] font-semibold font-suite leading-10 tracking-wide mt-[28px] ml-[34px]">{card.title}</h3>
+                  <p className="text-white text-xl font-suite leading-10 p-[34px]">{card.description}</p>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
         ))}
-      </CarouselContent>
-    </Carousel>
+      </div>
+    </div>
   );
 }
+
