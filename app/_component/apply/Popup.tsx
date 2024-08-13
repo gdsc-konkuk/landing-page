@@ -54,6 +54,7 @@ export default function Popup() {
   }
 
   return (
+
     <div
       className="flex flex-col items-center justify-center text-center"
       ref={popupRef}
