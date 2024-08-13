@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import {
   Carousel,
@@ -77,7 +77,16 @@ export default function SlidingCard() {
   const isMobile = useIsMobile();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [showDescription, setShowDescription] = useState(false);
+  const carouselRef = useRef<HTMLDivElement>(null); // 여기서 HTMLDivElement로 명시적으로 지정
 
+  const handleScroll = (event: React.WheelEvent) => { // 이벤트의 타입을 명시적으로 지정
+    if (carouselRef.current) {
+      if (event.deltaY === 0) {
+        carouselRef.current.scrollLeft += event.deltaX;
+      }
+    }
+  };
+  
   const handlePrev = () => {
     setCurrentIndex((prevIndex) => 
       prevIndex === 0 ? cards.length - 1 : prevIndex - 1
@@ -98,7 +107,7 @@ export default function SlidingCard() {
 
   if (isMobile) {
     return (
-      <div className="relative w-full flex justify-center items-center">
+      <div className="relative w-[80%] flex justify-center items-center">
         <Card className=" w-[265px] h-[180px]" onClick={toggleDescription}>
           <CardContent>
             <Image
@@ -142,21 +151,21 @@ export default function SlidingCard() {
   
   return (
     <Carousel
+      ref={carouselRef} // ref 지정
+      onWheel={handleScroll} // onWheel 이벤트 지정
       opts={{
         align: "start",
-        dragFree: true, //More natural drag-MinboyKim tip
+        dragFree: true, // More natural drag - MinboyKim tip
       }}
-      className="select-none" //to prevent select text-MinboyKim tip
+      className="select-none" // to prevent select text - MinboyKim tip
     >
       <CarouselContent>
         {cards.map((card, index) => (
           <CarouselItem key={index}
-          // className="md:basis-1/2 lg:basis-1/3">
-          //flex-basis: auto"
           className="basis-auto">
             <div className="p-1">
-              <Card className="group relative overflow-hidden">
-              <CardContent className="p-0">
+              <Card className="group relative ">
+                <CardContent className="p-0">
                   <Image
                     src={card.image}
                     alt={`Review Card ${index + 1}`} 
@@ -166,7 +175,6 @@ export default function SlidingCard() {
                     <h3 className="text-white text-[28px] font-semibold font-suite leading-10 tracking-wide mt-[28px] ml-[34px]">{card.title}</h3>
                     <p className="text-white text-xl font-suite leading-10 p-[34px]">{card.description}</p>
                   </div>
-
                 </CardContent>
               </Card>
             </div>

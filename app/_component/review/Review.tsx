@@ -60,7 +60,7 @@ export default function Review({}){
                 다양한 활동을 통해 함께 성장할 수 있어요.
                 </p>
             </div>
-            <div className='mt-[135px]'>
+            <div className='mt-[135px] w-[100%]'>
                 <SlidingCard/>
             </div>
           </div>
