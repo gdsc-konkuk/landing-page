@@ -44,7 +44,7 @@ export default function Review({ }) {
               <p>다양한 활동을 통해 함께 성장할 수 있어요.</p>
             </div>
             <div className="mt-[135px]">
-              <SlidingCard className='w-[100%]' />
+              <SlidingCard />
             </div>
           </div>
         </div>
