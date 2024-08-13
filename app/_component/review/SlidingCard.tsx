@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import {
   Carousel,
@@ -77,16 +77,33 @@ export default function SlidingCard() {
   const isMobile = useIsMobile();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [showDescription, setShowDescription] = useState(false);
-  const carouselRef = useRef<HTMLDivElement>(null); // 여기서 HTMLDivElement로 명시적으로 지정
+  const carouselRef = useRef<HTMLDivElement>(null);
 
-  const handleScroll = (event: React.WheelEvent) => { // 이벤트의 타입을 명시적으로 지정
-    if (carouselRef.current) {
-      if (event.deltaY === 0) {
-        carouselRef.current.scrollLeft += event.deltaX;
+  useEffect(() => {
+    const handleScroll = (event: WheelEvent) => {
+      if (carouselRef.current) {
+        if (event.deltaY === 0) {
+          carouselRef.current.scrollLeft += event.deltaX;
+          
+          // prevent screen scrolling
+          event.preventDefault();
+        }
       }
+    };
+
+    const carouselElement = carouselRef.current;
+    if (carouselElement) {
+      carouselElement.addEventListener('wheel', handleScroll, { passive: false });
     }
-  };
-  
+
+    // Cleanup
+    return () => {
+      if (carouselElement) {
+        carouselElement.removeEventListener('wheel', handleScroll);
+      }
+    };
+  }, []);
+
   const handlePrev = () => {
     setCurrentIndex((prevIndex) => 
       prevIndex === 0 ? cards.length - 1 : prevIndex - 1
@@ -152,7 +169,6 @@ export default function SlidingCard() {
   return (
     <Carousel
       ref={carouselRef} // ref 지정
-      onWheel={handleScroll} // onWheel 이벤트 지정
       opts={{
         align: "start",
         dragFree: true, // More natural drag - MinboyKim tip
