@@ -10,7 +10,7 @@ export default function ApplyButton({ className }: ApplyButtonProps) {
     <Link
       href="https://forms.gle/BNqAuEjTeUagPxgb6"
       className={cn(
-        'text-[#000] font-suite md:text-[28px] font-semibold md:w-[270px] md:h-[71px] rounded-[43px] bg-[#FBBC04] flex justify-center items-center px-[60px] py-[18px]',
+        'text-[#000] font-suite xl:text-[28px] font-semibold w-[128px] h-[37px] xl:w-[270px] xl:h-[71px] rounded-[43px] bg-[#FBBC04] flex justify-center items-center',
         className,
       )}
     >

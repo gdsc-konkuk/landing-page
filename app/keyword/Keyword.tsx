@@ -18,7 +18,6 @@ interface CardData {
   description: string;
   image: StaticImageData;
   mobileImage: StaticImageData;
-
 }
 
 const cards: CardData[] = [
@@ -40,7 +39,7 @@ const cards: CardData[] = [
   },
   {
     image: keywordChallenge,
-    
+
     mobileImage: mobileChallenge,
     subtitle: '도전',
     title: 'Challenge',
@@ -50,11 +49,11 @@ const cards: CardData[] = [
 
 const Keyword: React.FC = () => {
   const [isMobile, setIsMobile] = useState(false);
-  const [activeIndex, setActiveIndex] = useState(0); 
+  const [activeIndex, setActiveIndex] = useState(0);
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768);
+      setIsMobile(window.innerWidth <= 1280);
     };
 
     // Initial check
@@ -68,15 +67,18 @@ const Keyword: React.FC = () => {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
-  const textColor = ['#ea4335', '#33b540', '#fbbc04']; 
+  const textColor = ['#ea4335', '#33b540', '#fbbc04'];
   if (isMobile) {
     return (
-      <div className="flex  h-screen w-screen justify-center items-center mt-[169.02px] md:w-[80%]">
+      <div className="flex  xl:h-screen h-[1200px] w-screen justify-center items-center mt-[169.02px] xl:w-[80%]">
         <div className="flex flex-col ">
           {cards.map((card, index) => (
             <div key={index}>
               {/* subtitle 색상을 activeIndex에 맞춰 변경 */}
-              <div className="text-[14px] font-suite mt-[50px]" style={{ color: textColor[index % textColor.length] }}>
+              <div
+                className="text-[14px] font-suite mt-[50px]"
+                style={{ color: textColor[index % textColor.length] }}
+              >
                 {card.subtitle}
               </div>
               <div className="text-5xl font-bold mt-[4px] relative">
@@ -131,7 +133,7 @@ const Keyword: React.FC = () => {
             </React.Fragment>
           ))}
         </div>
-        <div className="ml-[41px] hidden md:block">
+        <div className="ml-[41px] hidden xl:block">
           <Card card={cards[activeIndex]} index={activeIndex} />
         </div>
       </div>
