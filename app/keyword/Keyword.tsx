@@ -4,12 +4,12 @@ import React, { useState, useEffect } from 'react';
 import Card from './Card';
 import Dot from './Dot';
 
-import keywordTogether from '../../public/images/keyword/keywordTogether.png';
-import keywordSharing from '../../public/images/keyword/keywordSharing.png';
-import keywordChallenge from '../../public/images/keyword/keywordChallenge.png';
-import mobileTogether from '../../public/images/keyword/mobileTogether.png';
-import mobileSharing from '../../public/images/keyword/mobileSharing.png';
-import mobileChallenge from '../../public/images/keyword/mobileChallenge.png';
+import keywordTogether from '../../public/images/keyword/keywordTogether.webp';
+import keywordSharing from '../../public/images/keyword/keywordSharing.webp';
+import keywordChallenge from '../../public/images/keyword/keywordChallenge.webp';
+import mobileTogether from '../../public/images/keyword/mobileTogether.webp';
+import mobileSharing from '../../public/images/keyword/mobileSharing.webp';
+import mobileChallenge from '../../public/images/keyword/mobileChallenge.webp';
 import { StaticImageData } from 'next/image';
 
 interface CardData {

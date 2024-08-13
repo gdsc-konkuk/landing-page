@@ -1,10 +1,10 @@
 'use client';
 import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
-import pmCard from '../../../public/images/apply/pmCard.png';
-import designerCard from '../../../public/images/apply/designerCard.png';
-import developerCard from '../../../public/images/apply/developerCard.png';
-import mobileCard from '../../../public/images/apply/mobileCard.png';
+import pmCard from '../../../public/images/apply/pmCard.webp';
+import designerCard from '../../../public/images/apply/designerCard.webp';
+import developerCard from '../../../public/images/apply/developerCard.webp';
+import mobileCard from '../../../public/images/apply/mobileCard.webp';
 import 'animate.css'; //bounce animations library
 
 export default function Popup() {
@@ -86,4 +86,3 @@ export default function Popup() {
     </div>
   );
 }
-

@@ -8,16 +8,16 @@ import {
   CarouselItem,
 } from '@/components/ui/carousel';
 
-import reviewCardDanggn from '../../../public/images/review/reviewCardDanggn.png';
-import reviewCardGraduation from '../../../public/images/review/reviewCardGraduation.png';
-import reviewCardRegularSeminar from '../../../public/images/review/reviewCardRegularSeminar.png';
-import reviewCardHanyang from '../../../public/images/review/reviewCardHanyang.png';
-import reviewCardBuildwithAI from '../../../public/images/review/reviewCardBuildwithAI.png';
-import reviewCardFlutter from '../../../public/images/review/reviewCardFlutter.png';
-import reviewCardGDSCGermany from '../../../public/images/review/reviewCardGDSCGermany.png';
-import reviewCardWRTN from '../../../public/images/review/reviewCardWRTN.png';
-import reviewCardKprintf from '../../../public/images/review/reviewCardKprintf.png';
-import reviewCardMTandTrip from '../../../public/images/review/reviewCardMTandTrip.png';
+import reviewCardDanggn from '../../../public/images/review/reviewCardDanggn.webp';
+import reviewCardGraduation from '../../../public/images/review/reviewCardGraduation.webp';
+import reviewCardRegularSeminar from '../../../public/images/review/reviewCardRegularSeminar.webp';
+import reviewCardHanyang from '../../../public/images/review/reviewCardHanyang.webp';
+import reviewCardBuildwithAI from '../../../public/images/review/reviewCardBuildwithAI.webp';
+import reviewCardFlutter from '../../../public/images/review/reviewCardFlutter.webp';
+import reviewCardGDSCGermany from '../../../public/images/review/reviewCardGDSCGermany.webp';
+import reviewCardWRTN from '../../../public/images/review/reviewCardWRTN.webp';
+import reviewCardKprintf from '../../../public/images/review/reviewCardKprintf.webp';
+import reviewCardMTandTrip from '../../../public/images/review/reviewCardMTandTrip.webp';
 import { useMediaQuery } from 'react-responsive';
 
 const cards = [
