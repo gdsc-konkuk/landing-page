@@ -34,13 +34,13 @@ const solutionData = [
     ],
     imageSrc: '/images/solution/glowalarm.png',
     link: 'https://github.com/sound-light',
-    className: 'z-40 translate-y-[57px]',
+    className: 'z-40 translate-y-[71px]',
   },
 ];
 
 export default function SolutionChallenge() {
   const [inViewRef, inView] = useInView({
-    threshold: 0.1,
+    threshold: 0.3,
   });
   const [animation, setAnimation] = useState('');
 
@@ -58,7 +58,7 @@ export default function SolutionChallenge() {
 
   if (isMobile) {
     return (
-      <div className="h-screen w-screen bg-[#F3F5F7] flex justify-center items-center px-[24px]">
+      <div className="xl:h-screen h-[800px] w-screen bg-[#F3F5F7] flex justify-center items-center px-[24px]">
         <div className="flex flex-col w-full h-full justify-center">
           <h1 className="font-gangwon text-[21px] tracking-[1px] text-center">
             SOLUTION Challenge
@@ -123,7 +123,7 @@ export default function SolutionChallenge() {
         </div>
       </div>
       <div
-        className="opacity-0 absolute bottom-0 w-[1px] h-[90px] bg-red-500"
+        className="opacity-0 absolute -bottom-0 w-[1px] h-[90px] bg-red-500"
         ref={inViewRef}
       ></div>
     </div>
