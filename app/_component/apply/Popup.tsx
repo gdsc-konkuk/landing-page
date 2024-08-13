@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import pmCard from '../../../public/images/apply/pmCard.png';
@@ -14,7 +14,7 @@ export default function Popup() {
 
   useEffect(() => {
     const checkMobile = () => {
-      setIsMobile(window.innerWidth <= 847); // Adjust this breakpoint as needed
+      setIsMobile(window.innerWidth <= 1280); // Adjust this breakpoint as needed
     };
 
     checkMobile();
@@ -22,7 +22,7 @@ export default function Popup() {
 
     const observer = new IntersectionObserver(
       (entries) => {
-        entries.forEach(entry => {
+        entries.forEach((entry) => {
           if (entry.isIntersecting) {
             setAnimate(true);
           } else {
@@ -30,7 +30,7 @@ export default function Popup() {
           }
         });
       },
-      { threshold: 0.2 }
+      { threshold: 0.2 },
     );
 
     if (popupRef.current) {
@@ -48,19 +48,18 @@ export default function Popup() {
   if (isMobile) {
     return (
       <div className="flex justify-center w-[382.05px] h-[278.69px] relative">
-        <Image
-          src={mobileCard}
-          alt="Mobile Card"
-          className=""
-        />
+        <Image src={mobileCard} alt="Mobile Card" className="" />
       </div>
     );
   }
 
   return (
-    <div className="flex flex-col items-center justify-center text-center" ref={popupRef}>
+    <div
+      className="flex flex-col items-center justify-center text-center"
+      ref={popupRef}
+    >
       <div
-        className={`w-[1380px] h-[700px] overflow-hidden relative ${animate ? 'animate__animated animate__bounceInUp' : 'translate-y-[1000px]'}`}
+        className={`w-[1380px] h-[700px] overflow-hidden relative ${animate ? 'animate__animated animate__bounceInUp' : 'translate-y-0'}`}
         style={{
           animationDuration: '1s',
           animationTimingFunction: 'ease-in-out',
@@ -86,3 +85,4 @@ export default function Popup() {
     </div>
   );
 }
+
