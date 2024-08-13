@@ -98,7 +98,7 @@ export default function SlidingCard() {
 
   if (isMobile) {
     return (
-      <div className="relative w-[80%] flex justify-center items-center">
+      <div className="relative w-full flex justify-center items-center">
         <Card className=" w-[265px] h-[180px]" onClick={toggleDescription}>
           <CardContent>
             <Image

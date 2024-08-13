@@ -32,7 +32,7 @@ export default function Apply() {
       <Popup />
       <div className="text-[#3B3B3B] text-[12px] font-suite mt-[20px] space-y-[8px] whitespace-nowrap">
         <p>GDSC와 함께 가치를 공유하고 성장하고 싶다면,</p>
-        <p>2024.08.13.~2024.08.23.</p>
+        <p>2024.08.14.~2024.08.23.</p>
       </div>
       <div className="flex items-center justify-center">
         <ApplyButton className="mt-[23px] md:mt-[56px] w-[128px] h-[37px] whitespace-nowrap" />
@@ -53,7 +53,7 @@ export default function Apply() {
       </div>
       <div className='text-black text-3xl font-semibold mt-[40px] space-y-[8px] whitespace-nowrap'>
         <p>GDSC와 함께 가치를 공유하고 성장하고 싶다면,</p>
-        <p>2024.08.13.~2024.08.23.</p>
+        <p>2024.08.14.~2024.08.23.</p>
       </div>
       <ApplyButton className="mt-[23px] md:mt-[56px] w-[128px] h-[37px] whitespace-nowrap " />
       <Popup />
